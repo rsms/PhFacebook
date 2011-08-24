@@ -22,16 +22,16 @@
 
 - (id) initWithApplicationID: (NSString*) appID delegate: (id) delegate
 {
-    if ((self == [super init]))
+    if ((self = [super init]))
     {
         if (appID)
             _appID = [[NSString stringWithString: appID] retain];
         _delegate = delegate; // Don't retain delegate to avoid retain cycles
         _webViewController = nil;
         _authToken = nil;
-        _permissions = nil;
+      _permissions = nil;
+      DebugLog(@"Initialized with AppID '%@'", _appID);
     }
-    DebugLog(@"Initialized with AppID '%@'", _appID);
 
     return self;
 }
@@ -165,9 +165,12 @@
 	[self notifyDelegateForToken: _authToken withError: errorReason];
 }
 
-- (NSString*) accessToken
-{
-    return [[_authToken.authenticationToken copy] autorelease];
+- (NSString*) accessToken {
+  return _authToken ? [[_authToken.authenticationToken copy] autorelease] : nil;
+}
+
+- (NSDate *) accessTokenExpiryDate {
+  return _authToken ? _authToken.expiry : nil;
 }
 
 - (void) sendFacebookRequest: (NSDictionary*) allParams
