@@ -12,4 +12,4 @@
     #define DebugLog(format, ...) CFShow([NSString stringWithFormat:format, ## __VA_ARGS__])
 #else
     #define DebugLog(format, ...)
-#endif                     
+#endif
