@@ -170,7 +170,17 @@
 }
 
 - (NSDate *) accessTokenExpiryDate {
-  return _authToken ? _authToken.expiry : nil;
+  if (!_authToken)
+    return nil;
+
+  // Return distant future if access token is valid for offline access (no timeout)
+  for (NSString *perm in [_authToken.permissions componentsSeparatedByString:@","]) {
+    if ([perm isEqualToString:@"offline_access"]) {
+      return [NSDate distantFuture];
+    }
+  }
+  
+  return _authToken.expiry;
 }
 
 - (void) sendFacebookRequest: (NSDictionary*) allParams
