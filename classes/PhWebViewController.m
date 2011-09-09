@@ -11,7 +11,7 @@
 #import "PhFacebook.h"
 #import "Debug.h"
 
-//#define ALWAYS_SHOW_UI
+#define ALWAYS_SHOW_UI
 
 @implementation PhWebViewController
 

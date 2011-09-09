@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,11 @@
 		37FB6F89122ACEB6006339F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37FB6F87122ACEB6006339F3 /* Localizable.strings */; };
 		37FB6FEE122AD367006339F3 /* PhAuthenticationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FB6FEC122AD367006339F3 /* PhAuthenticationToken.m */; };
 		37FB72D4122B5C7D006339F3 /* FacebookBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37FB72D3122B5C7D006339F3 /* FacebookBrowser.xib */; };
+		6A61433814198A7A008527B9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A61433714198A7A008527B9 /* Cocoa.framework */; };
+		6A61434614198A9E008527B9 /* PhAuthenticationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FB6FEC122AD367006339F3 /* PhAuthenticationToken.m */; };
+		6A61434714198AA1008527B9 /* PhFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 375CCD701225EED40064B3AE /* PhFacebook.m */; };
+		6A61434814198AA2008527B9 /* PhWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378DEC141228B9FD008061E4 /* PhWebViewController.m */; };
+		6A61434A14198AB0008527B9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A61434914198AB0008527B9 /* WebKit.framework */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -37,12 +42,30 @@
 		37FB6FEB122AD367006339F3 /* PhAuthenticationToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhAuthenticationToken.h; path = classes/PhAuthenticationToken.h; sourceTree = "<group>"; };
 		37FB6FEC122AD367006339F3 /* PhAuthenticationToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhAuthenticationToken.m; path = classes/PhAuthenticationToken.m; sourceTree = "<group>"; };
 		37FB72D3122B5C7D006339F3 /* FacebookBrowser.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacebookBrowser.xib; sourceTree = "<group>"; };
+		6A61433514198A7A008527B9 /* libphfacebook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libphfacebook.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A61433714198A7A008527B9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6A61433A14198A7A008527B9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		6A61433B14198A7A008527B9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6A61433C14198A7A008527B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6A61433F14198A7A008527B9 /* phfacebook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "phfacebook-Prefix.pch"; sourceTree = "<group>"; };
+		6A61434014198A7A008527B9 /* phfacebook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = phfacebook.h; sourceTree = "<group>"; };
+		6A61434114198A7A008527B9 /* phfacebook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = phfacebook.m; sourceTree = "<group>"; };
+		6A61434914198AB0008527B9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* PhFacebook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhFacebook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6A61433214198A7A008527B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A61434A14198AB0008527B9 /* WebKit.framework in Frameworks */,
+				6A61433814198A7A008527B9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF560486A6940098B216 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC2EF5B0486A6940098B216 /* PhFacebook.framework */,
+				6A61433514198A7A008527B9 /* libphfacebook.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +94,8 @@
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				6A61433D14198A7A008527B9 /* phfacebook */,
+				6A61433614198A7A008527B9 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
 			name = PhFacebook;
@@ -137,9 +163,54 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		6A61433614198A7A008527B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A61434914198AB0008527B9 /* WebKit.framework */,
+				6A61433714198A7A008527B9 /* Cocoa.framework */,
+				6A61433914198A7A008527B9 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A61433914198A7A008527B9 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A61433A14198A7A008527B9 /* AppKit.framework */,
+				6A61433B14198A7A008527B9 /* CoreData.framework */,
+				6A61433C14198A7A008527B9 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		6A61433D14198A7A008527B9 /* phfacebook */ = {
+			isa = PBXGroup;
+			children = (
+				6A61434014198A7A008527B9 /* phfacebook.h */,
+				6A61434114198A7A008527B9 /* phfacebook.m */,
+				6A61433E14198A7A008527B9 /* Supporting Files */,
+			);
+			path = phfacebook;
+			sourceTree = "<group>";
+		};
+		6A61433E14198A7A008527B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A61433F14198A7A008527B9 /* phfacebook-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		6A61433314198A7A008527B9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF500486A6940098B216 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +223,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		6A61433414198A7A008527B9 /* phfacebook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A61434314198A7A008527B9 /* Build configuration list for PBXNativeTarget "phfacebook" */;
+			buildPhases = (
+				6A61433114198A7A008527B9 /* Sources */,
+				6A61433214198A7A008527B9 /* Frameworks */,
+				6A61433314198A7A008527B9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = phfacebook;
+			productName = phfacebook;
+			productReference = 6A61433514198A7A008527B9 /* libphfacebook.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		8DC2EF4F0486A6940098B216 /* PhFacebook */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "PhFacebook" */;
@@ -176,8 +264,11 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "PhFacebook" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -194,6 +285,7 @@
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* PhFacebook */,
+				6A61433414198A7A008527B9 /* phfacebook */,
 			);
 		};
 /* End PBXProject section */
@@ -212,6 +304,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6A61433114198A7A008527B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A61434714198AA1008527B9 /* PhFacebook.m in Sources */,
+				6A61434814198AA2008527B9 /* PhWebViewController.m in Sources */,
+				6A61434614198A9E008527B9 /* PhAuthenticationToken.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF540486A6940098B216 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,7 +356,6 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -295,7 +396,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 			};
@@ -309,9 +409,50 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6A61434414198A7A008527B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "phfacebook/phfacebook-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6A61434514198A7A008527B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "phfacebook/phfacebook-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -332,6 +473,15 @@
 			buildConfigurations = (
 				1DEB91B208733DA50010E9CD /* Debug */,
 				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A61434314198A7A008527B9 /* Build configuration list for PBXNativeTarget "phfacebook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A61434414198A7A008527B9 /* Debug */,
+				6A61434514198A7A008527B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
