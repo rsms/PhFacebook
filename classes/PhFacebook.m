@@ -15,8 +15,11 @@
 #define kFBStoreAccessToken @"FBAStoreccessToken"
 #define kFBStoreTokenExpiry @"FBStoreTokenExpiry"
 #define kFBStoreAccessPermissions @"FBStoreAccessPermissions"
+#define kFBStoreUserID @"FBUserID"
 
 @implementation PhFacebook
+
+@synthesize userId = _userId;
 
 #pragma mark Initialization
 
@@ -52,6 +55,7 @@
         // Save it to user defaults
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject: token.authenticationToken forKey: kFBStoreAccessToken];
+        [defaults setObject: _userId forKey: kFBStoreUserID];
         if (token.expiry)
             [defaults setObject: token.expiry forKey: kFBStoreTokenExpiry];
         else
@@ -83,6 +87,8 @@
     [self clearToken];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:kFBStoreAccessToken];
+    [defaults removeObjectForKey:kFBStoreUserID];
+    _userId = nil;
     [defaults removeObjectForKey: kFBStoreTokenExpiry];
     [defaults removeObjectForKey: kFBStoreAccessPermissions];
 }
@@ -108,6 +114,7 @@
         NSString *perms = [defaults stringForKey: kFBStoreAccessPermissions];
         if (accessToken && perms)
         {
+            _userId = [defaults stringForKey:kFBStoreUserID];
             // Do not notify delegate yet...
             [self setAccessToken: accessToken expires: [date timeIntervalSinceNow] permissions: perms];
         }
@@ -159,9 +166,10 @@
     }
 }
 
-- (void) setAccessToken: (NSString*) accessToken expires: (NSTimeInterval) tokenExpires permissions: (NSString*) perms error: (NSString*) errorReason
+- (void) setAccessToken: (NSString*) accessToken expires: (NSTimeInterval) tokenExpires permissions: (NSString*) perms userId: (NSString*) userId error: (NSString*) errorReason
 {
 	[self setAccessToken: accessToken expires: tokenExpires permissions: perms];
+  _userId = userId;
 	[self notifyDelegateForToken: _authToken withError: errorReason];
 }
 

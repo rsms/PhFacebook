@@ -105,7 +105,7 @@
     NSString *urlWithoutSchema = [url substringFromIndex: [@"http://" length]];
     if ([url hasPrefix: @"https://"])
         urlWithoutSchema = [url substringFromIndex: [@"https://" length]];
-    
+  
     NSString *loginSuccessURLWithoutSchema = [kFBLoginSuccessURL substringFromIndex: 7];
     NSComparisonResult res = [urlWithoutSchema compare: loginSuccessURLWithoutSchema options: NSCaseInsensitiveSearch range: NSMakeRange(0, [loginSuccessURLWithoutSchema length])];
     if (res == NSOrderedSame)
@@ -113,10 +113,20 @@
         NSString *accessToken = [self extractParameter: kFBAccessToken fromURL: url];
         NSString *tokenExpires = [self extractParameter: kFBExpiresIn fromURL: url];
         NSString *errorReason = [self extractParameter: kFBErrorReason fromURL: url];
+      NSString *userId = nil;
+      
+        // Find user id
+      NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:@"https://www.facebook.com"]];
+      for (NSHTTPCookie *cookie in cookies) {
+        if ([cookie.name isEqualToString:@"c_user"]) {
+          userId = cookie.value;
+          break;
+        }
+      }
 
         [self.window orderOut: self];
 
-        [parent setAccessToken: accessToken expires: [tokenExpires floatValue] permissions: self.permissions error: errorReason];
+      [parent setAccessToken: accessToken expires: [tokenExpires floatValue] permissions: self.permissions userId: userId error: errorReason];
     }
 
     res = [url compare: kFBLoginURL options: NSCaseInsensitiveSearch range: NSMakeRange(0, [kFBLoginURL length])];

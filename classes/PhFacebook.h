@@ -14,12 +14,15 @@
 @interface PhFacebook : NSObject
 {
 @private
-    NSString *_appID;
-    id _delegate;
-    PhWebViewController *_webViewController;
-    PhAuthenticationToken *_authToken;
-    NSString *_permissions;
+  NSString *_appID;
+  id _delegate;
+  PhWebViewController *_webViewController;
+  PhAuthenticationToken *_authToken;
+  NSString *_permissions;
+  NSString *_userId;
 }
+
+@property (strong) NSString *userId;
 
 - (id) initWithApplicationID: (NSString*) appID delegate: (id) delegate;
 
@@ -35,7 +38,7 @@
 
 - (void) invalidateCachedToken;
 
-- (void) setAccessToken: (NSString*) accessToken expires: (NSTimeInterval) tokenExpires permissions: (NSString*) perms error: (NSString*) errorReason;
+- (void) setAccessToken: (NSString*) accessToken expires: (NSTimeInterval) tokenExpires permissions: (NSString*) perms userId: (NSString*) userId error: (NSString*) errorReason;
 - (NSString*) accessToken;
 - (NSDate *) accessTokenExpiryDate;
 
